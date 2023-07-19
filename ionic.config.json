@@ -1,0 +1,7 @@
+{
+  "name": "SafeCharge",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
