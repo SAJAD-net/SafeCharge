@@ -1,17 +1,44 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Home
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
+    <!--<require from="sweetalert/dist/sweetalert.css"></require>-->
     <ion-toolbar>
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <app-explore-container name="Safe Charge"></app-explore-container>
+    <ion-list vertical="bottom" horizontal="center" slot="fixed">
+      <ion-item>
+        <ion-badge vertical="bottom" horizontal="center" color="success">Safe Percentage</ion-badge>
+      </ion-item>
+    
+      <ion-item >
+        <ion-input value="95" [(ngModel)]="inputValue" type="number" min="20" max="100"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label >Battery Level</ion-label>
+        <ion-badge color="danger">{{level}}</ion-badge>
+      </ion-item>
+
+      <ion-item>
+        <ion-label >Status</ion-label>
+        <ion-badge color="danger">{{plugged}}</ion-badge>
+      </ion-item>
+    </ion-list>
+
+  <ion-fab  vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button id="present-alert" (click)="onBatteryStatus()">
+      <ion-icon name='save'></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>
